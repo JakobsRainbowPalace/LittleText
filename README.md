@@ -8,11 +8,11 @@ Requirements:
 - knowledge how to use a command prompt
 
 Installation: 
-Then open your command prompt and go into the folder where the sourccode lays. 
-Enter: javac LittleText.java 
-wait until it's finished and then
-enter: java LittleText
-Wait a moment and the program will open. :)
+- open your command prompt and go into the folder where the sourccode lays. 
+- enter: javac LittleText.java 
+- wait until it finished building (compiling) the code
+- enter: java LittleText
+- wait a moment and the program will open. :)
 
 Alright, thats it stay awesome! <3
 Your J.R.
