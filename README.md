@@ -1,18 +1,41 @@
 # LittleText
 A small texteditor written in Java by Jakob Rieke
 
-This is just a little project of mine for getting started with the JavaFx Gui.
+This is a small project of mine I created some years back in order 
+to learn JavaFX.
 
-Requirements:
-- the newest! JDK (Java Development Kit) installed on your pc.
-- knowledge how to use a command prompt
+### Usage
 
-Installation: 
-- open your command prompt and go into the folder where the sourccode lays. 
-- enter: javac LittleText.java 
-- wait until it finished building (compiling) the code
-- enter: java LittleText
-- wait a moment and the program will open. :)
+If you want to run the source code simply run
+```
+git clone https://github.com/TheRainbowPalace/LittleText.git
+cd LittleText
+scripts/start.sh
+```
 
-Alright, thats it stay awesome! <3
-Your J.R.
+### Dependencies
+
+JDK 1.8 or higher is required. 
+
+### Licence
+###### MIT Licence
+
+Copyright (c) 2016 Jakob Rieke
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
