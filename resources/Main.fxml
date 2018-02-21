@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.input.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="vBox" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
+  <children>
+    <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="_File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#newFile" text="New">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open…">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#openMultiple" text="Open Multiple..." />
+            <Menu id="menuOpenRecent" mnemonicParsing="false" text="Open Recent">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#clearRecent" text="Clear Recent" />
+                     </items></Menu>
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#close" text="Close">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="W" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#save" text="Save">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#saveAs" text="Save As…">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator></MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#revertToSaved" text="Revert To Saved">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#quit" text="Quit">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+          </items>
+        </Menu>
+            <Menu mnemonicParsing="false" text="_Preferences">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#setSyncPref" text="Sync" />
+                  <MenuItem mnemonicParsing="false" onAction="#setShortcutPref" text="Shortcuts" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#disablePack" text="Disable Package" />
+                  <MenuItem mnemonicParsing="false" onAction="#installPack" text="Install Package" />
+                  <MenuItem mnemonicParsing="false" onAction="#uninstallPack" text="Uninstall Package" />
+                  <MenuItem mnemonicParsing="false" onAction="#enablePack" text="Enable Package" />
+                  <MenuItem mnemonicParsing="false" onAction="#updatePack" text="Update Packages" />
+              </items>
+            </Menu>
+        <Menu mnemonicParsing="false" text="_Edit">
+          <items>
+            <MenuItem id="undoText" mnemonicParsing="false" onAction="#editUndo" text="Undo">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            <MenuItem id="redoText" mnemonicParsing="false" onAction="#editRedo" text="Redo">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Y" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem id="cutText" mnemonicParsing="false" onAction="#editCut" text="Cut">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            <MenuItem id="copyText" mnemonicParsing="false" onAction="#editCopy" text="Copy">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            <MenuItem id="pasteText" mnemonicParsing="false" onAction="#editPaste" text="Paste">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            <MenuItem id="deleteText" mnemonicParsing="false" onAction="#editDelete" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem id="selectAllText" mnemonicParsing="false" onAction="#editSelectAll" text="Select All">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#editDeselect" text="Deselect">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+          </items>
+        </Menu>
+            <Menu mnemonicParsing="false" text="_View">
+              <items>
+                  <CheckMenuItem mnemonicParsing="false" onAction="#viewMenuBar" selected="true" text="Menu Bar">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="DIGIT1" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </CheckMenuItem>
+                  <CheckMenuItem mnemonicParsing="false" onAction="#viewTabPane" selected="true" text="Tab Pane">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="DIGIT2" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </CheckMenuItem>
+                  <CheckMenuItem mnemonicParsing="false" onAction="#viewTreeView" selected="true" text="Tree View">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="DIGIT3" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </CheckMenuItem>
+                  <CheckMenuItem mnemonicParsing="false" onAction="#viewStatusBar" selected="true" text="Status Bar">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="DIGIT4" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </CheckMenuItem>
+                  <CheckMenuItem mnemonicParsing="false" onAction="#viewFullscreen" text="Fullscreen">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F11" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </CheckMenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              </items>
+            </Menu>
+        <Menu disable="true" mnemonicParsing="false" text="_Help">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#helpSubmitFeedback" text="Submit Feedback" />
+                  <MenuItem mnemonicParsing="false" onAction="#helpIntroduce" text="Introduction" />
+                  <MenuItem mnemonicParsing="false" onAction="#helpReportBug" text="Report Bugs" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#helpAbout" text="About LittleText" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <HBox id="HBox" fx:id="warningBar" alignment="CENTER_LEFT" spacing="5.0">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Status" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="11.0" fx:id="x31" />
+               </font>
+               <textFill>
+                  <Color blue="0.625" green="0.625" red="0.625" fx:id="x41" />
+               </textFill>
+            </Label>
+            <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" opacity="0.81" prefHeight="22.0" prefWidth="54.0" style="-fx-background-radius: 20;" text="Yes">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" opacity="0.81" prefHeight="22.0" prefWidth="60.0" style="-fx-background-radius: 20;" text="No">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Pane prefHeight="22.0" prefWidth="13.0" />
+            <Button mnemonicParsing="false" opacity="0.81" prefHeight="22.0" prefWidth="60.0" style="-fx-background-radius: 20;" text="Cancel">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Pane prefHeight="22.0" prefWidth="6.0" />
+         </children>
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+      </HBox>
+    <SplitPane dividerPositions="0.22717149220489977" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+            <TreeView fx:id="treeView" minWidth="-Infinity" prefWidth="200.0" />
+            <TabPane fx:id="tabPane" tabClosingPolicy="ALL_TABS" />
+      </items>
+    </SplitPane>
+    <HBox id="HBox" fx:id="statusBar" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label fx:id="leftStatus" maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left Status" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="11.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color blue="0.625" green="0.625" red="0.625" fx:id="x4" />
+          </textFill>
+        </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+        <Label fx:id="rightStatus" font="$x3" maxWidth="-1.0" text="Right status" textFill="$x4" HBox.hgrow="NEVER" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>
